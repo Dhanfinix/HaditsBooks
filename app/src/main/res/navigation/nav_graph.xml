@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/DailyFragment">
+
+    <fragment
+        android:id="@+id/DailyFragment"
+        android:name="com.dhandev.haditsbooks.DailyFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_daily">
+        <argument
+            android:name="dataHadits"
+            app:argType="com.dhandev.haditsbooks.data.remote.response.HadithsItem"/>
+        <action
+            android:id="@+id/action_DailyFragment_to_BooksFragment"
+            app:destination="@id/BooksFragment" />
+        <action
+            android:id="@+id/action_DailyFragment_self"
+            app:destination="@id/DailyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BooksFragment"
+        android:name="com.dhandev.haditsbooks.BooksFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_books">
+
+        <action
+            android:id="@+id/action_BooksFragment_to_DailyFragment"
+            app:destination="@id/DailyFragment" />
+        <action
+            android:id="@+id/action_BooksFragment_to_ListHadithFragment"
+            app:destination="@id/ListHadithFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/ListHadithFragment"
+        android:name="com.dhandev.haditsbooks.ListHadithFragment"
+        android:label="{bookName}"
+        tools:layout="@layout/fragment_list_hadith">
+        <argument
+            android:name="bookId"
+            app:argType="string"/>
+        <argument
+            android:name="bookName"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_ListHadithFragment_to_DailyFragment"
+            app:destination="@id/DailyFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dhandev.haditsbooks.MainActivity">
+    <item
+        android:id="@+id/DailyFragment"
+        android:title="@string/action_daily"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/BooksFragment"
+        android:title="@string/action_book"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/ListHadithFragment"-->
+<!--        android:title="@string/action_settings"-->
+<!--        android:icon="@drawable/ic_baseline_settings_24"-->
+<!--        app:showAsAction="never" />-->
+</menu>
